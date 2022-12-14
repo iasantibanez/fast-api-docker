@@ -24,8 +24,8 @@ def insert_data_into_tables():
 def start_application():
     app = FastAPI(title=settings.PROJECT_NAME
                     ,version=settings.PROJECT_NAME)
-    create_tables()
-    include_router(app)
+    #create_tables()
+    #include_router(app)
     #insert_data_into_tables()
 
 
