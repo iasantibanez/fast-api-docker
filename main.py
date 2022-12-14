@@ -29,7 +29,7 @@ def start_application():
     #insert_data_into_tables()
 
 
-    @app.get('/')
+    @app.get('/me')
     def hello():
         return 'Hello World!'
 
