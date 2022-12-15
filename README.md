@@ -1,7 +1,7 @@
 ### Documentación en proceso.
 
 
- **el codigo se encuentra diseñado bajo el patron de diseño de repositorio, en donde se prima destinar carpetas asociadas a la logica de cada endpoint y desacoplar la logica de todas las operaciones CRUD que se realizan en la Base de datos.**
+ **el codigo se encuentra diseñado bajo el patron de diseño de repositorio, en donde se prima destinar carpetas asociadas a la logica de cada endpoint y desacoplar la logica de todas las operaciones CRUD que se realizan en la Base de datos. Así aislar la capa de datos con el resto de la app**
 
 
 1. En primer lugar se definio la arquitectura a para resolver el desafio, acá se tomó el uso de recursos cloud, RDS Postgresql y EC2 del ecosistema AWS. Posteriormente en terminos de codigo se desarrollo en python bajo el framework de fastapi Siguiendo documentación y buenas practicas de seguridad.
