@@ -27,9 +27,10 @@ def insert_data_into_tables():
 def start_application():
     app = FastAPI(title=settings.PROJECT_NAME
                     ,version=settings.PROJECT_NAME)
+    create_tables()
     insert_data_into_tables()
     include_router(app)
-    
+
     @app.get('/me')
     def hello():
         return 'Hello World! Im https://github.com/iasantibanez/ :)'

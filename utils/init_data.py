@@ -19,7 +19,7 @@ def init_jobs_table(db_url):
     response=''
     try:
         #pass
-        response=data.to_sql('jobs', conn,if_exists= 'replace')
+        response=data.to_sql('jobs', conn,if_exists= 'append',method=None)
         print(f'data jobs Inserted Rows Inserted: {len(data)}')
     except Exception as e:
         print(e)
@@ -31,10 +31,12 @@ def init_employees_table(db_url):
     db = create_engine(db_url)
     conn = db.connect()
     data = pd.read_csv(r'./src/data/hired_employees.csv',names=['id','name','datetime','department_id','job_id']).set_index('id')
+    data = data.dropna()
+    data = data.drop_duplicates(subset=['name'])
     response=''
     try:
         #pass
-        response=data.to_sql('employees', conn,if_exists= 'replace')
+        response=data.to_sql('employees', conn,if_exists= 'append',method=None)
         print(f'data hired_employees Rows Inserted: {len(data)}')
     except Exception as e:
         print(e)
@@ -49,7 +51,7 @@ def init_departments_table(db_url):
     response=''
     try:
         #pass
-        response=data.to_sql('departments', conn,if_exists= 'replace')
+        response=data.to_sql('departments', conn,if_exists= 'append',method=None)
         print(f'data departments Rows Inserted: {len(data)}')
     except Exception as e:
         print(e)
