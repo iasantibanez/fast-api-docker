@@ -60,14 +60,3 @@ def restore_table(db: Session = Depends(get_db)):
     if not department:
         raise HTTPException(status_code=404,detail=f"can't get departments table or does not exist")
     return department
-
-@router.get('/init_table/')
-def init_table(db: Session = Depends(get_db)):
-    obj = init_departments_table()
-    create_multiple_deparments(request=obj,db=db)
-
-    #DepartmentsCreate
-    #department = create_multiple_deparments(db=db)
-    #if not department:
-    #    raise HTTPException(status_code=404,detail=f"can't get departments table or does not exist")
-    #return department

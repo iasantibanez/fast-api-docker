@@ -60,10 +60,4 @@ def restore_table(db: Session = Depends(get_db)):
     if not job:
         raise HTTPException(status_code=404,detail=f"can't get jobs table or does not exist")
     return job
-
-@router.get('/init_table/')
-def init_table(db: Session = Depends(get_db)):
-    obj = init_jobs_table()
-    create_multiple_jobs(request=obj,db=db)
-    #print(obj)
     

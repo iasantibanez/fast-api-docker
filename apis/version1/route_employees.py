@@ -66,11 +66,4 @@ def restore_table(db: Session = Depends(get_db)):
     employees = employees_table_restore_backup(db=db)
     if not employees:
         raise HTTPException(status_code=404,detail=f"can't get employees table or does not exist")
-
-@router.get('/init_table/')
-def init_table(db: Session = Depends(get_db)):
-    obj = init_employees_table()
-    #print(obj)
-    response = create_multiple_employees(request=obj,db=db)
-
     return response
