@@ -15,7 +15,7 @@ from schemas.departments import DepartmentsCreate
 def init_jobs_table(db_url):
     db = create_engine(db_url)
     conn = db.connect()
-    data = pd.read_csv(r'./src/data/jobs.csv',names=['id','job_id']).set_index('id')
+    data = pd.read_csv(r'./src/data/jobs.csv',names=['id','job']).set_index('id')
     response=''
     try:
         #pass
@@ -45,7 +45,7 @@ def init_employees_table(db_url):
 def init_departments_table(db_url):
     db = create_engine(db_url)
     conn = db.connect()
-    data = pd.read_csv(r'./src/data/departments.csv',names=['id','department_id']).set_index('id')
+    data = pd.read_csv(r'./src/data/departments.csv',names=['id','department']).set_index('id')
     response=''
     try:
         #pass
